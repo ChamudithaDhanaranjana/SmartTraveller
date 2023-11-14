@@ -4,9 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from "../nav/nav-bar";
 
 interface FormData {
-  hotelName: string;
-  hotelType: string;
-  hotelDescription: string;
+  travelLocationName: string;
+  travelLocationType: string;
+  locationDescription: string;
   price: string;
   province: string;
   district: string;
@@ -15,12 +15,12 @@ interface FormData {
   closeDropdown: string;
 }
 
-export default function AddHotel() {
+export default function AddLocation() {
   const [state, setState] = useState("");
   const [formData, setFormData] = useState<FormData>({
-    hotelName: '',
-    hotelType: '',
-    hotelDescription: '',
+    travelLocationName: '',
+    travelLocationType: '',
+    locationDescription: '',
     price: '',
     province: '',
     district: '',
@@ -49,7 +49,7 @@ export default function AddHotel() {
       <NavBar></NavBar>
       <div className="w-full h-full">
         <form className="bg-white p-10 rounded-lg" onSubmit={handleSubmit}>
-          <label className="block text-gray-700 font-bold mb-2 text-xl">+AddHotel</label>
+          <label className="block text-gray-700 font-bold mb-2 text-xl">+AddTravelLocation</label>
           <div className="flex">
             <div className="flex-1 w-48 pr-12">
               <div className="mt-2 flex justify-center  px-auto py-48 bg-gray-200">
@@ -73,26 +73,26 @@ export default function AddHotel() {
             <div className="flex-1 ">
               <div className="mb-4">
                 <label htmlFor="hotelName" className="block text-gray-700 mb-2">
-                  Hotel Name
+                Travel Location Name
                 </label>
                 <input
                   type="text"
                   id="hotelName"
                   name="hotelName"
-                  value={formData.hotelName}
+                  value={formData.travelLocationName}
                   onChange={handleInputChange}
                   className="w-full py-2 px-3 rounded-full bg-gray-200 focus:outline-none focus:border-indigo-500"
                 />
               </div>
               <div className="mb-4">
                 <label htmlFor="hotelType" className="block text-gray-700 mb-2">
-                  Hotel Type
+                Travel Location Type
                 </label>
                 <input
                   type="text"
                   id="hotelType"
                   name="hotelType"
-                  value={formData.hotelType}
+                  value={formData.travelLocationType}
                   onChange={handleInputChange}
                   className="w-full py-2 px-3 rounded-full bg-gray-200 focus:outline-none focus:border-indigo-500"
                 />
@@ -104,7 +104,7 @@ export default function AddHotel() {
                 <textarea
                   id="hotelDescription"
                   name="hotelDescription"
-                  value={formData.hotelDescription}
+                  value={formData.locationDescription}
                   onChange={handleInputChange}
                   className="w-full py-2 px-3 rounded-md bg-gray-200 focus:outline-none focus:border-indigo-500"
                   placeholder="Type here |"
@@ -112,7 +112,7 @@ export default function AddHotel() {
               </div>
               <div className="mb-4 w-full relative flex items-center">
                 <label htmlFor="price" className=" block w-48 text-gray-700 mb-2">
-                  Price per person
+                  Ticket Price
                 </label>
                 <div className="relative w-full">
                   <input
